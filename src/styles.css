@@ -13,13 +13,19 @@ body{
     border-radius: 25%;
 }
 
+
 .pokeSubmit {
     margin: 5px;
-    border: none;
+    cursor: pointer;
 }
+
 
 footer {
     position: fixed;
     bottom: 0;
     margin: 10px;
+}
+
+.submitBtn {
+
 }

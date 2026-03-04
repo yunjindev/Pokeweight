@@ -23,6 +23,8 @@ submitBtn.addEventListener("click", () => {
         .then(([weightOne, weightTwo]) => {
             if (weightOne === weightTwo) {
             pokeCompare.textContent = "They are the same!"
+        } else if (weightOne = undefined || weightTwo == undefined) {
+            pokeCompare.textContent = "Error! Enter a real pokemon!";
         } else if (weightOne > weightTwo) {
             pokeCompare.textContent = `${pokemonOneInput.value} (${weightOne}kg) is heavier than ${pokemonTwoInput.value} (${weightTwo}kg)!`
         } else {
