@@ -1,31 +1,33 @@
-const inputText = document.getElementById("inputText");
+const pokemonOneInput = document.getElementById("pokemonOneInput");
+const pokemonTwoInput = document.getElementById("pokemonTwoInput");
 const submitBtn = document.getElementById("submitBtn");
-const pokeName = document.getElementById("pokeName");
+const pokeCompare = document.getElementById("pokeCompare");
 
-function grabPokemonName() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${inputText.value.toLowerCase()}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            const pokeWeight = data.weight;
-            const pokeNameText = data.name;
-            pokeName.textContent = `${pokeNameText} and ${pokeWeight}`;
-            initGame(pokeWeight);
-        })
+function grabPokemonName(pokemonInput) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonInput.value.toLowerCase()}`)
+        .then(response => response.json())
+        .then(value =>  value.weight)
         .catch(err => {
-            pokeName.textContent = "Error: Enter a real pokemon!";
+            pokeCompare.textContent = "Error! Enter a real pokemon!";
             console.error(err)});
-
-        function initGame(pokeWeight) {
-            if (pokeWeight > 100) {
-                console.log("Hes heavier");
-        } else {
-            console.log("They are lighter");
-        }
-    }
 }
 
 submitBtn.addEventListener("click", () => {
-    grabPokemonName();
+    if (pokemonOneInput.value === "" || pokemonTwoInput.value === "") {
+        pokeCompare.textContent = "A pokemon field is missing!";
+        return;
+    }
+    const pokemonOneWeight = grabPokemonName(pokemonOneInput);
+    const pokemonTwoWeight = grabPokemonName(pokemonTwoInput);
+    Promise.all([pokemonOneWeight, pokemonTwoWeight])
+        .then(([weightOne, weightTwo]) => {
+            if (weightOne === weightTwo) {
+            pokeCompare.textContent = "They are the same!"
+        } else if (weightOne > weightTwo) {
+            pokeCompare.textContent = `${pokemonOneInput.value} (${weightOne}kg) is heavier than ${pokemonTwoInput.value} (${weightTwo}kg)!`
+        } else {
+            pokeCompare.textContent = `${pokemonTwoInput.value} (${weightTwo}kg) is heavier than ${pokemonOneInput.value} (${weightOne}kg)!`
+
+        }
+    });
 });

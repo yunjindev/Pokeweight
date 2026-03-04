@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokeweight</title>
-    <link rel="stylesheets" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/assets/pokemon-icon.png" type="image/x-icon">
 </head>
 <body>
-    <input id="inputText" type="text">
-    <button id="submitBtn">Submit</button>
-    <p id="pokeName"></p>
+    <div class="container">
+        <h1>Pokeweight</h1>
+        <p>Compare two different pokemon to see who is heavier!</p>
+        <div class="pokeSubmit 1">
+            <input id="pokemonOneInput" type="text">
+        </div>
+         <div class="pokeSubmit 2">
+            <input id="pokemonTwoInput" type="text">
+            
+        </div>
+        <button id="submitBtn">Submit</button>
+    </div>
+        <div>
+            <h2 id="pokeCompare"></h2>
+        </div>
+    <footer>These weights are all pulled from pokeapi.</footer>
     <script src="script.js"></script>
 </body>
-</html>`
+</html>

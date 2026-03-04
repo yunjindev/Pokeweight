@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 25%;
+}
+
+.pokeSubmit {
+    margin: 5px;
+    border: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+}
