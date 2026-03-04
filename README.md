@@ -6,10 +6,6 @@ A application to compare two weights between two input pokemon
 
 Download the code and run through your IDE and localhost
 
-
 ## For fun project
 
 This project was made to better understand **fetch** and **async** in javascript
-
-
-
