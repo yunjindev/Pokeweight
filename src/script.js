@@ -7,7 +7,7 @@ const pokeResult = document.getElementById("pokeResult");
 function grabPokemonName(pokemonInput) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonInput.value.toLowerCase()}`)
         .then(response => response.json())
-        .then(value =>  value.weight)
+        .then(value =>  value.weight /10)
         .catch(err => {
             pokeCompare.textContent = "Error! Enter a real pokemon!";
             console.error(err)});
@@ -24,11 +24,11 @@ submitBtn.addEventListener("click", () => {
     Promise.all([pokemonOneWeight, pokemonTwoWeight])
         .then(([weightOne, weightTwo]) => {
             if (weightOne === weightTwo && (weightOne == undefined && weightTwo == undefined)) {
-            pokeCompare.textContent = "Error: Both pokemon are not found!"
-        } else if (weightOne === weightTwo && weightOne != undefined  && weightTwo) {
-            pokeCompare.textContent = "They are the same pokemon!"
+            pokeCompare.textContent = "Error: Both pokemon were not found!"
+        } else if (weightOne === weightTwo) {
+            pokeCompare.textContent = `They are the same weight (${weightOne}kg)!`
         } else if (weightOne == undefined || weightTwo == undefined) {
-            pokeCompare.textContent = "Error! One of the pokemon are not found!";
+            pokeCompare.textContent = "Error! One of the pokemon were not found!";
         } else if (weightOne > weightTwo) {
             pokeCompare.textContent = `${pokemonOneInput.value} (${weightOne}kg) is heavier than ${pokemonTwoInput.value} (${weightTwo}kg)!`
         } else {
