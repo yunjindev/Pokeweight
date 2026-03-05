@@ -1,3 +1,10 @@
+.schoolbell-regular {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body{
     display: flex;
     flex-direction: column;
@@ -5,6 +12,7 @@ body{
     align-items: center;
     text-align: center;
     background-color: #f0f0f0;
+    font-family: "Schoolbell";
 }
 
 .container {
