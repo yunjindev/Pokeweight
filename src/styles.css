@@ -43,6 +43,8 @@ button {
     border: 1px solid black;
     font-family: "Schoolbell";
     font-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 #pokeResult {
