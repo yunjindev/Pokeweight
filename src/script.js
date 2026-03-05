@@ -25,7 +25,7 @@ submitBtn.addEventListener("click", () => {
         .then(([weightOne, weightTwo]) => {
             if (weightOne === weightTwo && (weightOne == undefined && weightTwo == undefined)) {
             pokeCompare.textContent = "Error: Both pokemon are not found!"
-        } else if (weightOne === weightTwo) {
+        } else if (weightOne === weightTwo && weightOne != undefined  && weightTwo) {
             pokeCompare.textContent = "They are the same pokemon!"
         } else if (weightOne == undefined || weightTwo == undefined) {
             pokeCompare.textContent = "Error! One of the pokemon are not found!";
