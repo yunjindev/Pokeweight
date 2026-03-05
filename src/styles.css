@@ -45,6 +45,7 @@ button {
     font-size: 15px;
     appearance: none;
     -webkit-appearance: none;
+    color: black;
 }
 
 #pokeResult {
