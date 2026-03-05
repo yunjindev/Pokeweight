@@ -23,10 +23,12 @@ submitBtn.addEventListener("click", () => {
     const pokemonTwoWeight = grabPokemonName(pokemonTwoInput);
     Promise.all([pokemonOneWeight, pokemonTwoWeight])
         .then(([weightOne, weightTwo]) => {
-            if (weightOne === weightTwo) {
-            pokeCompare.textContent = "They are the same!"
+            if (weightOne === weightTwo && (weightOne == undefined && weightTwo == undefined)) {
+            pokeCompare.textContent = "Error: Both pokemon are not found!"
+        } else if (weightOne === weightTwo) {
+            pokeCompare.textContent = "They are the same pokemon!"
         } else if (weightOne == undefined || weightTwo == undefined) {
-            pokeCompare.textContent = "Error! Enter a real pokemon!";
+            pokeCompare.textContent = "Error! One of the pokemon are not found!";
         } else if (weightOne > weightTwo) {
             pokeCompare.textContent = `${pokemonOneInput.value} (${weightOne}kg) is heavier than ${pokemonTwoInput.value} (${weightTwo}kg)!`
         } else {
