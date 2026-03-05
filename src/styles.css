@@ -17,14 +17,19 @@ body{
 
 .container {
     border: 1px solid black;
-    padding: 30px;
-    border-radius: 25%;
+    padding: 0px 15px 15px 15px;
 }
 
 
-.pokeSubmit {
-    margin: 5px;
+.pokeInput {
+    margin-bottom: 10px;
     cursor: pointer;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+    
+}
+.pokeInput:focus{
+    outline: 2px solid red;
 }
 
 
@@ -34,6 +39,22 @@ footer {
     margin: 10px;
 }
 
-.submitBtn {
+button {
+    border: 1px solid black;
+    font-family: "Schoolbell";
+    font-size: 15px;
+}
 
+#pokeResult {
+    border: 1px solid black;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#pikagif {
+    position: fixed;
+    bottom: 30px;
+    width: 100px;
+    height: auto;
 }

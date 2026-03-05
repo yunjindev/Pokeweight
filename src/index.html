@@ -15,18 +15,21 @@
         <h1>Pokeweight</h1>
         <p>Compare two different pokemon to see who is heavier!</p>
         <div class="pokeSubmit">
-            <input id="pokemonOneInput" type="text">
+            <input class="pokeInput" id="pokemonOneInput" type="text">
         </div>
          <div class="pokeSubmit">
-            <input id="pokemonTwoInput" type="text">
+            <input class="pokeInput" id="pokemonTwoInput" type="text">
             
         </div>
-        <button id="submitBtn">Submit</button>
+        <button id="submitBtn" >Submit</button>
     </div>
-        <div>
+        <div id="pokeResult" hidden>
             <h2 id="pokeCompare"></h2>
         </div>
-    <footer>These weights are all pulled from pokeapi.</footer>
+    <footer>
+        These weights are all pulled from pokeapi.
+    </footer>
+    <img id="pikagif" src="/assets/pikachu.gif">
     <script src="script.js"></script>
 </body>
 </html>

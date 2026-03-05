@@ -2,6 +2,7 @@ const pokemonOneInput = document.getElementById("pokemonOneInput");
 const pokemonTwoInput = document.getElementById("pokemonTwoInput");
 const submitBtn = document.getElementById("submitBtn");
 const pokeCompare = document.getElementById("pokeCompare");
+const pokeResult = document.getElementById("pokeResult");
 
 function grabPokemonName(pokemonInput) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonInput.value.toLowerCase()}`)
@@ -13,6 +14,7 @@ function grabPokemonName(pokemonInput) {
 }
 
 submitBtn.addEventListener("click", () => {
+    pokeResult.hidden = false;
     if (pokemonOneInput.value === "" || pokemonTwoInput.value === "") {
         pokeCompare.textContent = "A pokemon field is missing!";
         return;
